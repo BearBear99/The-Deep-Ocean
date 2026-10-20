@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Deep Ocean</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--  Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dynalight&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="site-header" aria-label="Site header">
+    <a href="#hero" class="logo">
+  <img src="assets/Logo.png" alt="Deep Sea Explorer logo" class="logo-img" />
+</a>
+
+
+    <nav aria-label="Primary">
+      <div class="nav-capsule">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#depthTrack">Zones</a></li>
+          <li><a href="#challenges">Challenges</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+        <span class="nav-slider" aria-hidden="true"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-inner">
+      <h1>The Deep Ocean</h1>
+      <p>Discover the mysteries below 200 meters.</p>
+    </div>
+
+  </section>
+<!--  DEPTH   -->
+<section id="depth" class="intro-bleed" aria-labelledby="depth-title">
+  <div class="depth-seam" aria-hidden="true"></div>
+  <div class="depth-ui">
+    <h2 id="depth-title">Do you know how deep is the ocean?</h2>
+    <p class="depth-num"
+       role="progressbar"
+       aria-live="polite"
+       aria-valuemin="1000"
+       aria-valuemax="10984"
+       aria-valuenow="1000">1,000 m</p>
+    <small>From shallow to the Challenger Deep (Mariana Trench)</small>
+  </div>
+</section>
+
+
+ <!--  INTRO   -->
+<section id="intro" class="intro-bleed" aria-labelledby="intro-title">
+   <img src="assets/Ocean2.png"class="bg-img" alt=""/>
+  <!-- top waves -->
+  <div class="waveband waveband-top" aria-hidden="true">
+    <svg class="wave back" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,70 C240,120 480,20 720,70 C960,120 1200,20 1440,70 L1440,120 L0,120 Z"></path>
+    </svg>
+    <svg class="wave front" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- content -->
+  <canvas id="bubbles" aria-hidden="true"></canvas>
+  <div class="intro-inner">
+    <h2 id="intro-title">What is the deep sea?</h2>
+    <p>
+  The deep sea begins below <strong>200 meters</strong>, where sunlight vanishes fast, 
+  pressure rises to extreme levels, and temperatures drop near freezing—typically 
+  between <strong>0–4&nbsp;°C</strong>. Despite these harsh conditions, life thrives, 
+  with around <strong>27,000 species</strong> identified, though thousands or millions 
+  more likely remain undiscovered. Creatures here use adaptations like bioluminescence 
+  and slow metabolism to survive in diverse zones, from the mesopelagic to the hadalpelagic.
+</p>
+<p class="video-intro">
+  Want to know how deep is the ocean is? 
+  Play the video below to explore more about the deep sea:
+</p>
+    <div class="video-wrapper">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/UwVNkfCov1k"
+      title="What is the deep sea?"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+     </iframe>
+    </div>
+  </div>
+  <!-- bottom waves  -->
+  <div class="waveband waveband-bottom" aria-hidden="true">
+    <svg class="wave back" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,50 C240,0 480,100 720,50 C960,0 1200,100 1440,50 L1440,0 L0,0 Z"></path>
+    </svg>
+    <svg class="wave front" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 L1440,0 L0,0 Z"></path>
+    </svg>
+  </div>
+</section>
+
+
+
+
+
+ <!-- Zones -->
+<section id="depthTrack" aria-label="Depth zones">
+  
+  <!-- Mesopelagic -->
+  <article class="zone" data-depth-start="200" data-depth-end="1000" aria-labelledby="z-meso-title">
+    <header>
+      <h2 id="z-meso-title">Mesopelagic — “Twilight Zone” (200–1,000 m)</h2>
+      <p class="zone-blurb">
+        Dimly lit and rapidly cooling, this zone is home to countless creatures adapted to near darkness. Many have bioluminescent organs used for camouflage or communication. Every night, billions of fish migrate upward to feed and return by day—forming the largest daily movement of life on Earth.
+      </p>
+      <p class="zone-facts">
+        <strong>Pressure:</strong> like 20–100 cars stacked.<br>
+        <strong>History:</strong> 1934 Bathysphere reached ~923 m.
+      </p>
+      <p class="zone-species-title"><strong>Species in this Zone</strong></p>
+    </header>
+    <div id="gallery-meso" class="species-gallery">
+      <div class="creature-grid">
+        <figure class="creature">
+          <img src="assets/Viperfish.png" alt="Viperfish with sharp, needle-like teeth and a glowing lure extending from its dorsal spine, swimming in the dim, blue twilight of the mesopelagic zone" />
+          <figcaption><strong>Viperfish</strong> — One of the fiercest deep-sea predators, with dagger-like teeth and a hinged jaw for ambush attacks. It hunts smaller fish and shrimp, using a bioluminescent lure on its dorsal spine to attract prey in total darkness.</figcaption>
+        </figure>
+        <figure class="creature">
+          <img src="assets/Lanternfish.jpg" alt="A small lanternfish with a sleek body covered in glowing photophores, illuminated against the dark mesopelagic waters, forming part of a large school" />
+          <figcaption><strong>Lanternfish</strong> — Covered with light-producing organs called photophores, which allow it to blend with faint sunlight or signal other fish. It feeds mainly on plankton and small crustaceans and forms huge schools that are a vital food source for whales, squid, and tuna.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bathypelagic -->
+  <article class="zone" data-depth-start="1000" data-depth-end="4000" aria-labelledby="z-bathy-title">
+    <header>
+      <h2 id="z-bathy-title">Bathypelagic — “Midnight Zone” (1,000–4,000 m)</h2>
+      <p class="zone-blurb">
+        Sunlight never reaches this part of the ocean. The water stays just above freezing, around 2 to 4°C, and the pressure is immense — hundreds of times greater than at the surface. Life here moves slowly to save energy, depending on “marine snow,” the tiny bits of dead plankton and debris drifting down from above.
+      </p>
+      <p class="zone-facts">
+        <strong>Pressure:</strong> like a skyscraper on a person.<br>
+        <strong>History:</strong> 1953 Bathyscaphe Trieste reached ~3,150 m.
+      </p>
+      <p class="zone-species-title"><strong>Species in this Zone</strong></p>
+    </header>
+    <div id="gallery-bathy" class="species-gallery">
+      <div class="creature-grid">
+        <figure class="creature">
+          <img src="assets/anglerfish.png" alt="Anglerfish with a bulbous body and a glowing bioluminescent lure protruding from its head, lurking in the pitch-black bathypelagic zone" />
+          <figcaption><strong>Anglerfish</strong> — Uses a small glowing lure to draw prey close in total darkness. It can gulp down animals nearly its own size. Females are much larger than males, which may attach to them for life. Anglerfish eat anything they can fit in their mouths — fish, shrimp, and drifting crustaceans.</figcaption>
+        </figure>
+        <figure class="creature">
+          <img src="assets/giantsquid.png" alt="Giant squid with massive, dinner-plate-sized eyes and long, powerful tentacles, gliding through the dark bathypelagic waters" />
+          <figcaption><strong>Giant Squid</strong> — Has eyes nearly the size of dinner plates, perfect for spotting the faint light of bioluminescent creatures. It hunts deep-sea fish and other squid, using powerful tentacles lined with suction cups. Sperm whales often bear scars from battling these enormous animals in the dark.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- Abyssopelagic -->
+  <article class="zone" data-depth-start="4000" data-depth-end="6000" aria-labelledby="z-abyss-title">
+    <header>
+      <h2 id="z-abyss-title">Abyssopelagic — “Abyss” (4,000–6,000 m)</h2>
+      <p class="zone-blurb">
+        The abyss is a world of total darkness and silence. The temperature stays just above freezing, around 2°C, and the pressure is enormous. There are no plants here, only slow-moving creatures that survive on whatever food drifts down from the upper ocean. Some deep-sea species grow unusually large — a trait known as deep-sea gigantism — to store energy and endure the cold.
+      </p>
+      <p class="zone-facts">
+        <strong>Pressure:</strong> As heavy as several hundred cars pressing all at once.<br>
+        <strong>History:</strong> DSV <em>Alvin</em> routinely explores ~4,500 m (since the 1960s).
+      </p>
+      <p class="zone-species-title"><strong>Species in this Zone</strong></p>
+    </header>
+    <div id="gallery-abyss" class="species-gallery">
+      <div class="creature-grid">
+        <figure class="creature">
+          <img src="assets/Amphipoda.png" alt="A small, transparent deep-sea amphipod with a shrimp-like body, scavenging on organic debris in the dark abyssopelagic zone" />
+          <figcaption><strong>Amphipod</strong> — Small, shrimp-like scavengers that feed on organic debris and dead animals drifting from above. Their soft, transparent bodies and special enzymes keep their cells from collapsing under extreme pressure.</figcaption>
+        </figure>
+        <figure class="creature">
+          <img src="assets/atollajellyfish.png" alt="Atolla jellyfish with a translucent bell and glowing blue rings, pulsating in the pitch-black abyssopelagic waters" />
+          <figcaption><strong>Atolla Jellyfish</strong> — When threatened, it releases bright rings of blue light that ripple across its body like a “burglar alarm,” attracting larger predators that might scare away its attacker. It usually feeds on tiny crustaceans and plankton floating in the dark.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+
+  <!-- Hadalpelagic -->
+  <article class="zone" data-depth-start="6000" data-depth-end="11000" aria-labelledby="z-hadal-title">
+    <header>
+      <h2 id="z-hadal-title">Hadalpelagic — “Trenches” (6,000–11,000 m)</h2>
+      <p class="zone-blurb">
+        The deepest part of the ocean lies in narrow trenches that can stretch for thousands of kilometers. The temperature stays near 1°C, and the pressure is more than a thousand times higher than at sea level. Life here has evolved in isolation, with fragile, slow-growing species adapted to the silence and crushing weight.
+      </p>
+      <p class="zone-facts">
+        <strong>Pressure:</strong> So powerful it could crush a car as if it were made of tin.<br>
+        <strong>History:</strong> 1960 Trieste reached ~10,911 m; later 2012 and 2019 hadal dives.
+      </p>
+      <p class="zone-species-title"><strong>Species in this Zone</strong></p>
+    </header>
+    <div id="gallery-hadal" class="species-gallery">
+      <div class="creature-grid">
+        <figure class="creature">
+          <img src="assets/hadalsnailfish.png" alt="A hadal snailfish with a soft, gelatinous body, swimming along the seafloor of the dark, high-pressure hadalpelagic trench" />
+          <figcaption><strong>Hadal Snailfish</strong> — The world’s deepest-living fish. Its body is soft and gelatinous, helping it withstand immense pressure. It feeds mainly on amphipods and small crustaceans that crawl along the trench floor.</figcaption>
+        </figure>
+        <figure class="creature">
+          <img src="assets/Grimpoteuthis.png" alt="Dumbo octopus with large, ear-like fins and a soft, rounded body, gliding gracefully in the dark hadalpelagic waters" />
+          <figcaption><strong>Dumbo Octopus</strong> — Moves gracefully through the water using its ear-like fins instead of jet propulsion. It eats worms and small shellfish from the seafloor and is known to brood its eggs for years, ensuring the next generation survives in this extreme world.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+ <!--  SECTION 3: Deep Sea Pollution  -->
+<section id="challenges" aria-labelledby="ch-title">
+  <h2 id="ch-title">Deep Sea Pollution</h2>
+
+  <p>
+    Studies show deep-sea litter is rapidly increasing. According to Science (2022), marine debris in the deep ocean has risen by over 60% in the past 30 years. The most common items are plastic bags, straws, and fishing nets—even plastic bags were found in the 10,000m-deep Mariana Trench.
+These materials take hundreds to thousands of years to decompose: a plastic bottle about 450 years, fishing nets over 600 years.
+The impact is severe: whales, turtles, and fish die from entanglement or ingestion, while microplastics enter the food chain, eventually returning to humans.
+  </p>
+
+  <!-- single-frame rotator -->
+  <div class="rotator" role="region" aria-label="Deep sea pollution slideshow">
+    <button class="rotor-arrow prev" aria-label="Previous">‹</button>
+
+    <div class="rotor-frame">
+      <img src="assets/pollution1.jpg" alt="Human operations and machines disturb deep-sea ecosystems." data-cap="Human operations and machines disturb deep-sea ecosystems.">
+      <img src="assets/pollution2.jpeg" alt="Discarded fishing gear and waste entangle marine life and alter habitats." data-cap="Discarded fishing gear and waste entangle marine life and alter habitats.">
+      <img src="assets/pollution3.jpeg" alt="Deep-sea habitats with corals and sponges are easily disturbed by human activity." data-cap="Deep-sea habitats with corals and sponges are easily disturbed by human activity.">
+      <img src="assets/pollution4.png" alt="Plastic waste and single-use items pollute even the deep sea floor." data-cap="Plastic waste and single-use items pollute even the deep sea floor.">
+      <img src="assets/pollution5.jpeg" alt="Cables and equipment left on the seabed damage fragile ecosystems." data-cap="Cables and equipment left on the seabed damage fragile ecosystems.">
+    </div>
+
+    <button class="rotor-arrow next" aria-label="Next">›</button>
+
+    <div class="rotor-dots" aria-label="Slide indicators">
+    </div>
+    <p class="ocean-message">
+  The ocean has given us so much — Should we keep destroying the ocean, or start protecting it?
+</p>
+
+  </div>
+
+<div class="floating-trash" aria-hidden="true">
+   <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" aria-label="Close (Esc)">✕</button>
+    <img class="lb-img" src="" alt="">
+    <p class="lb-cap"></p>
+
+  </div>
+</section>
+
+
+
+  <!-- Quiz -->
+<section id="quiz" class="intro-bleed quiz-bleed" aria-labelledby="quiz-title">
+  <!-- Top waves -->
+  <div class="waveband waveband-top" aria-hidden="true">
+    <svg class="wave back" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,70 C240,120 480,20 720,70 C960,120 1200,20 1440,70 L1440,120 L0,120 Z"></path>
+    </svg>
+    <svg class="wave front" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,120 L0,120 Z"></path>
+    </svg>
+  </div>
+
+  <!-- Quiz content -->
+  <div class="quiz-inner">
+    <h2 id="quiz-title">Deep Sea Quiz</h2>
+    <div class="quiz-container">
+      <div class="quiz-question" id="quiz-question-1" aria-labelledby="q1">
+        <h3 id="q1">How deep is the deepest part of the ocean?</h3>
+        <div class="choices" role="group" aria-labelledby="q1">
+          <button data-q="1" data-a="7000">~7,000 m</button>
+          <button data-q="1" data-a="11000">~11,000 m</button>
+          <button data-q="1" data-a="15000">~15,000 m</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+      <div class="quiz-question" id="quiz-question-2" aria-labelledby="q2" hidden>
+        <h3 id="q2">Approximately how many species have been identified in the deep sea?</h3>
+        <div class="choices" role="group" aria-labelledby="q2">
+          <button data-q="2" data-a="1000">~1,000</button>
+          <button data-q="2" data-a="27000">~27,000</button>
+          <button data-q="2" data-a="100000">~100,000</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+      <div class="quiz-question" id="quiz-question-3" aria-labelledby="q3" hidden>
+        <h3 id="q3">How long does it take for a plastic bottle to decompose in the deep sea?</h3>
+        <div class="choices" role="group" aria-labelledby="q3">
+          <button data-q="3" data-a="450">~450 years</button>
+          <button data-q="3" data-a="750">~750 years</button>
+          <button data-q="3" data-a="1000">~1,000 years</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+      <div class="quiz-question" id="quiz-question-4" aria-labelledby="q4" hidden>
+        <h3 id="q4">What is a major environmental concern of deep-sea mining?</h3>
+        <div class="choices" role="group" aria-labelledby="q4">
+          <button data-q="4" data-a="noise">Noise pollution</button>
+          <button data-q="4" data-a="light">Light pollution</button>
+          <button data-q="4" data-a="habitat">Habitat destruction</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+      </div>
+      <div class="quiz-result" id="quiz-result" hidden>
+        <h3 id="quiz-result-title">Your Results</h3>
+        <p id="quiz-score" aria-live="polite">Score: 0/4</p>
+        <p id="quiz-message"></p>
+        <button id="quiz-retry">Try Again</button>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom waves -->
+  <div class="waveband waveband-bottom" aria-hidden="true">
+    <svg class="wave back" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,50 C240,0 480,100 720,50 C960,0 1200,100 1440,50 L1440,0 L0,0 Z"></path>
+    </svg>
+    <svg class="wave front" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,40 C240,-10 480,90 720,40 C960,-10 1200,90 1440,40 L1440,0 L0,0 Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Feedback -->
+<section id="feedback" class="feedback-bleed" aria-labelledby="fb-title">
+  <div class="feedback-inner">
+    <form id="feedback-form">
+      <h2 id="fb-title">Feedback</h2>
+      <div class="feedback-container">
+        <div class="rating-section">
+          <div class="rating-question">
+            <label>Did this website help you understand the deep ocean?</label>
+            <div class="stars" data-question="q1">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <div class="rating-question">
+            <label>Has your view on deep ocean conservation changed?</label>
+            <div class="stars" data-question="q2">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <div class="rating-question">
+            <label>How much do you like the website's design elements?</label>
+            <div class="stars" data-question="q3">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <div class="rating-question">
+            <label>Would you recommend this to friends?</label>
+            <div class="stars" data-question="q4">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+        </div>
+        <div class="message-section">
+          <label for="message">Your Message (Optional)</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what surprised you about the deep ocean..."></textarea>
+          <label for="email">Optional Email</label>
+          <input id="email" type="email" name="email" placeholder="u123456@gmail.com" />
+        </div>
+      </div>
+      <button type="submit">Send Feedback</button>
+    </form>
+  </div>
+</section>
+
+<script>
+document.getElementById("feedback-form").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+  alert(" Thank you for your feedback!");
+  this.reset(); 
+});
+</script>
+
+  <!-- Footer -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Site Logo" class="footer-logo">
+      <span class="footer-text">The Deep Ocean</span>
+    </div>
+    <div class="footer-info">
+      <small>Student Number:U3292103 One-page site </small>
+    </div>
+  </div>
+</footer>
+
+<script src="index.js" defer></script>
+</body>
+</html>
